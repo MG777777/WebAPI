@@ -1,0 +1,6 @@
+@KontaktAPP_HostAddress = http://localhost:5101
+
+GET {{KontaktAPP_HostAddress}}/
+Accept: application/json
+
+###
