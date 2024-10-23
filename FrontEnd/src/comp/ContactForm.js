@@ -18,7 +18,7 @@ function ContactForm({ fetchContacts }) {
       return;
     }
     try {
-      const response = await axios.post('https://kontaktapp.azurewebsites.net/api/Contacts', {
+      const response = await axios.post('https://localhost:7195/api/Contacts', {
         name,
         phonenumber
       });
