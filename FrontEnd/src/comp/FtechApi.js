@@ -11,7 +11,7 @@ function FtechApi() {
   const [editedPhonenumber, setEditedPhonenumber] = useState(''); 
   const fetchContacts = async () => {
     try {
-      const response = await axios.get('https://kontaktapp.azurewebsites.net/api/Contacts');
+      const response = await axios.get('https://localhost:7195/api/Contacts');
       setContacts(response.data);A
       setLoading(false);
     } catch (error) {
@@ -21,7 +21,7 @@ function FtechApi() {
   };
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://kontaktapp.azurewebsites.net/api/Contacts/${id}`);
+      await axios.delete(`https://localhost:7195/api/Contacts/${id}`);
       setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
     } catch (error) {
       console.error('Error deleting contact:', error);
@@ -35,7 +35,7 @@ function FtechApi() {
   const handleSubmitEdit = async () => {
     try {
         
-      await axios.put(`https://kontaktapp.azurewebsites.net/api/Contacts/${editingContact.id}`, 
+      await axios.put(`https://localhost:7195/api/Contacts/${editingContact.id}`, 
       {
         id: editingContact.id,
         Name: editedName,
